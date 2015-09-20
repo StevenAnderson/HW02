@@ -24,6 +24,8 @@ int main(int argc, char* argv[])
 	Phone_Directory the_directory;
 	the_directory.load_data(argv[1]);
 	process_commands(the_directory);
+
+	return 0;
 }
 
 void process_commands(Phone_Directory& the_directory)
@@ -87,9 +89,16 @@ void do_lookup_entry(Phone_Directory& the_directory)
 
 void do_remove_entry(Phone_Directory& the_directory) // Exercise 1.8: please complete the function do_remove_entry - Ed/Kent
 {
+	//Zach Kinney & Steven Anderson
 	string name;
 	cout << "Enter name: ";
 	getline(cin, name);
+	string answer = the_directory.remove_entry(name);
+
+	if (answer != "")
+		std::cout << "Entry removed." << endl;
+	else
+		std::cout << "Name does not exist." << endl;
 	// Complete the rest of this function 
 	
 }
