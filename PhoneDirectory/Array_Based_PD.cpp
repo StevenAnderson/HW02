@@ -124,10 +124,13 @@ string Phone_Directory::remove_entry(const string& name) // Exercise 1.7: please
 			for (int i = index; i < size - 1; i++)
 				the_directory[i] = the_directory[i + 1];
 			
+			
 			std::string s = std::to_string(index);
+			size = size - 1;
+
 			return s;
 		}
-
+	
 		else return "";
 	}
 
